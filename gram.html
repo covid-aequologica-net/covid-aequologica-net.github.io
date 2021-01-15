@@ -38,11 +38,11 @@
 </body>
 
 <script type="module">
-    import Grammar from './js/gram.js';
+    import {Grammar, pubSubKeyGRAMMAR} from './js/gram.js';
 
     const gram = new Grammar(line => console.log("PARSED", line));
 
-    window.ps.subscribe('COMMAND', (e) => {
+    window.ps.subscribe(pubSubKeyGRAMMAR, (e) => {
         if (!e) return;
     });
 

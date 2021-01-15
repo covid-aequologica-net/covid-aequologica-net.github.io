@@ -12,6 +12,8 @@ import { populationByCountry } from './model/population.js';
 import { domain } from './model/domain.js';
 import { factory } from './model/factory.js'
 import { Fuzzy2Country } from './model/fuzzy.js';
+import { pubSubKeyGRAMMAR } from './gram.js';
+import { pubSubKeyKEYBOARD } from "./view/keyboard.js";
 
 if (location.protocol !== 'https:' && window.location.hostname !== "localhost") {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
@@ -92,7 +94,7 @@ $(document).ready(() => {
         // speech
         const fuzzy2country =  new Fuzzy2Country();
 
-        window.ps.subscribe('COMMAND', (e) => {
+        window.ps.subscribe(pubSubKeyGRAMMAR, (e) => {
             if (!e) return;
             
             if (e.action == 'RESET') {
@@ -105,14 +107,14 @@ $(document).ready(() => {
                 redraw(model.getCountriesHolder().get());
                 return;
             } 
-            if (e.action == "UNSELECT") {
+            if (e.action == 'UNSELECT') {
                 model.getCountriesHolder().setSelectedCountry(undefined);
-                window.ps.publish('KEYBOARD', { event: 'SPACE' });
+                window.ps.publish(pubSubKeyKEYBOARD, { event: 'SPACE' });
                 return;
             } 
-            if (e.action == "SELECT") {
+            if (e.action == 'SELECT') {
                 model.getCountriesHolder().setSelectedCountry(fuzzy2country.convert(e.argument));
-                window.ps.publish('KEYBOARD', { event: 'SPACE' });
+                window.ps.publish(pubSubKeyKEYBOARD, { event: 'SPACE' });
                 return;
             } 
             // https://medium.com/@alvaro.saburido/set-theory-for-arrays-in-es6-eb2f20a61848

@@ -7,6 +7,8 @@ let flyingCategories;
 let flyingXScale;
 let flyingYScale;
 
+export const pubSubKeyDRAWPOINTS = 'DRAWPOINTS';
+
 export function draw(...args) {
     const [rootG, properties, categories, doNotAnimate] = args;
 
@@ -136,7 +138,7 @@ export function draw(...args) {
                 return color(d.category);
             });
 
-        pubSubToken = window.ps.subscribe("SELECTED_COUNTRY", (msg, data) => {
+        pubSubToken = window.ps.subscribe(pubSubKeyDRAWPOINTS, (msg, data) => {
             drawPoints(msg);
         });
 
