@@ -252,7 +252,7 @@
         <img id="cog" type="svg" src="./img/svg/settings-svgrepo-com.svg">
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item d-flex justify-content-end">
             <div title="per capita vs. absolute numbers">
@@ -275,9 +275,9 @@
             </div>
           </li>
           <li class="nav-item d-flex justify-content-end">
-            <div title="length of rolling average" class="w-100">
-              <div class="custom-control custom-control-inline w-100">
-                <input type="range" min="0" max="9" value="6" class="w-100 custom-range form-control-range" id="sizeOfAverage">
+            <div title="length of rolling average" class=""><!-- class="w-100" -->
+              <div class="custom-control custom-control-inline"> <!-- class="custom-control custom-control-inline w-100" -->
+                <input type="range" min="0" max="9" value="6"  id="sizeOfAverage" class="custom-range form-control-range"><!-- class="w-100 custom-range form-control-range" -->
                 <datalist id="tickmarks">
                   <option value="1"></option>
                   <option value="2"></option>
@@ -290,9 +290,12 @@
                   <option value="21"></option>
                   <option value="28"></option>
                 </datalist>
-                <label class="my-custom-control-label text-right" id="bubble" for="sizeOfAverage" style="width: 40px;"></label>
-                <!--  font-family: monospace; -->
-                <label id="average" class="my-custom-control-label mr-1 text-nowrap"></label>
+                <label id="sizeOfAverageLabel" for="sizeOfAverage" class="my-custom-control-label text-right" >
+                </label>
+                <!-- label class="my-custom-control-label text-right" id="bubble" for="sizeOfAverage" style="width: 40px;">
+                  < ! - -  font-family: monospace; - - >
+                </label>
+                <label id="average" class="my-custom-control-label mr-1 text-nowrap"></label -->
               </div>
             </div>
           </li>

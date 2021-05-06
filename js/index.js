@@ -209,7 +209,7 @@ $(document).ready(() => {
         // cumula
         function cumula2averageFeedback(disable) {
             $('[type="range"]#sizeOfAverage').prop("disabled", disable);
-            $('label#bubble, label#average').css({ opacity: !disable ? 1 : .333 });
+            // $('label#bubble, label#average').css({ opacity: !disable ? 1 : .333 });
         }
         {
             const cumulat = model.getToggle("toggleCumula");
@@ -347,12 +347,14 @@ $(document).ready(() => {
             }else if (sizeOfAverage <= 28) { 
                 $("#sizeOfAverage").val(9);
             }
-            $("#bubble").html(sizeOfAverage);
             function averageFeedback(a) {
-                $("label#average").html(a < 2
-                    ? "day<span style='text-decoration: line-through; color: #9a9a9a;'>s average</span>"
-                    : "day<span>s average</span>"
+                const $qwe = $("<span style='font-family: monospace; margin-right:.2rem;'>"+a+"</span>"+
+                               "<span>day</span>"
+                        +(a < 2 ? "&nbsp;<span style='text-decoration: line-through; color: #9a9a9a;'>average</span>"
+                                : "<span>s&nbsp;average</span>"
+                    )
                 );
+                $("#sizeOfAverageLabel").empty().append($qwe);
             }
             averageFeedback(sizeOfAverage);
             const sizeOfAverageRange = document.querySelectorAll('#sizeOfAverage[type="range"]');
@@ -360,12 +362,10 @@ $(document).ready(() => {
                 sizeOfAverageRange.forEach((r) => {
                     r.addEventListener("input", () => {
                         const translated = values[r.value];
-                        bubble.innerHTML = translated;
                         averageFeedback(translated);
                     });
                     r.addEventListener("change", () => {
                         const translated = values[r.value];
-                        bubble.innerHTML = translated;
                         if (model.getSizeOfAverage() != translated) {
                             model.setSizeOfAverage(translated);
                             averageFeedback(translated);
