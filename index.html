@@ -238,9 +238,10 @@
   <!-- footer -->
   <footer class="footer">
     <nav id="bottom" class="navbar fixed-bottom navbar-expand-sm d-flex">
-      <form class="navbar-item form-inline flex-grow-1">
-        <div class="custom-control custom-control-inline d-flex">
-          <label id="startFeedback" class="my-custom-control-label flex-shrink-1 mr-3"><span></span></label>
+      <form class="navbar-item form-inline flex-grow-1" style="padding: 0; margin: 0 .5rem; height: 2.5rem;">
+        <div > <!-- class="custom-control custom-control-inline d-flex" -->
+          <label id="startFeedback" for="startRangeInput" ><span></span></label> <!-- class="my-custom-control-label flex-shrink-1 mr-3" -->
+          <br>
           <input type="range" id="startRangeInput" step="1" min="1" value="1" class="w-100 custom-range" />
         </div>
         &nbsp;
@@ -254,9 +255,9 @@
 
       <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item d-flex justify-content-end">
+          <li class="nav-item d-flex justify-content-end align-items-center">
             <div title="per capita vs. absolute numbers">
-              <div class="form-check form-check-inline text-nowrap">
+              <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0;">
                 <input id="toggleCapita" data-taggle-on="percapita" data-taggle-off="absolute" type="checkbox" data-toggle="toggle" data-size="xs" data-onstyle="outline-primary"
                   data-offstyle="outline-secondary">
                 <label id="toggleCapita" for="toggleCapita" class="form-check-label px-1">per million</label>
@@ -264,9 +265,9 @@
               </div>
             </div>
           </li>
-          <li class="nav-item d-flex justify-content-end">
-            <div title="logarithmic vs. linear Y axis">
-              <div class="form-check form-check-inline text-nowrap">
+          <li class="nav-item d-flex justify-content-end align-items-center">
+            <div title="logarithmic vs. linear Y axis" >
+              <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0;">
                 <input id="toggleLinear" data-taggle-on="logarithmic" data-taggle-off="linear" type="checkbox" data-toggle="toggle" data-size="xs" data-onstyle="outline-primary"
                   data-offstyle="outline-secondary">
                 <label id="toggleLinear" for="toggleLinear" class="form-check-label px-1">log Y axis</label>
@@ -275,9 +276,12 @@
             </div>
           </li>
           <li class="nav-item d-flex justify-content-end">
-            <div title="length of rolling average" class=""><!-- class="w-100" -->
-              <div class="custom-control custom-control-inline"> <!-- class="custom-control custom-control-inline w-100" -->
-                <input type="range" min="0" max="9" value="6"  id="sizeOfAverage" class="custom-range form-control-range"><!-- class="w-100 custom-range form-control-range" -->
+            <div title="length of rolling average" style="margin: 0 .5rem; padding: 0;"><!-- class="w-100" -->
+              <div > <!-- class="custom-control custom-control-inline" -->
+                <label id="sizeOfAverageLabel" for="sizeOfAverage" class="text-right w-100" style="margin: 0; padding: 0; text-align: right !important"> <!-- class="my-custom-control-label text-right" -->
+                </label>
+                <br>
+                <input type="range" min="0" max="9" value="6"  id="sizeOfAverage"><!--  class="custom-range form-control-range" -->
                 <datalist id="tickmarks">
                   <option value="1"></option>
                   <option value="2"></option>
@@ -290,8 +294,6 @@
                   <option value="21"></option>
                   <option value="28"></option>
                 </datalist>
-                <label id="sizeOfAverageLabel" for="sizeOfAverage" class="my-custom-control-label text-right" >
-                </label>
                 <!-- label class="my-custom-control-label text-right" id="bubble" for="sizeOfAverage" style="width: 40px;">
                   < ! - -  font-family: monospace; - - >
                 </label>
