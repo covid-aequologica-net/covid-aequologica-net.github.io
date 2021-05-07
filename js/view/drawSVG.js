@@ -1,6 +1,6 @@
 'use strict';
 
-import { setupTooltip } from './tooltip.js';
+/* import { setupTooltip } from './tooltip.js'; */
 
 let pubSubToken;
 let flyingCategories;
@@ -153,6 +153,7 @@ export function draw(...args) {
             }
 
             // between try/catch: points and tooltip is not worth crashing the app
+            /*
             try {
                 d3.selectAll("circle.point").remove();
                 if (country) {
@@ -175,6 +176,7 @@ export function draw(...args) {
             } catch (err) {
                 console.log(err);
             }
+            */
 
         }
 
@@ -246,9 +248,11 @@ export function draw(...args) {
                 return yScale(d.nummer)
             });
 
+        /*
         if (0 < $(".tippy-popper").length && $(".tippy-popper")[0]._tippy) {
             $(".tippy-popper")[0]._tippy.hide();
-        }
+        } 
+        */
 
         if (!doNotAnimate) {
             animate();
