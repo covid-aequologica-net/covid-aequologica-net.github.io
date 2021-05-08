@@ -3,15 +3,15 @@
 export const factory = {
   world: _.sortedUniq(
     _.sortBy([
-      "Finland",
+      "Argentina",
+      "Brazil",
+      "Colombia",
+      "European Union",
       "France",
       "Germany",
       "India",
-      "Italy",
-      "Netherlands",
-      "Spain",
-      "Sweden",
-      "United Kingdom",
+      "Iran",
+      "Turkey",
       "United States",
     ])
   ),
