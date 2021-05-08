@@ -198,7 +198,7 @@ $(document).ready(() => {
 
     // various toggles
     model.forEachToggle((key, val) => {
-      $('[data-toggle="toggle"]#' + key).each((i, btn) => {
+      $('[data-bs-toggle="toggle"]#' + key).each((i, btn) => {
         const setOn = model.getToggle(key) === $(btn).data("taggle-on");
         // $(btn).bootstrapToggle(setOn ? "on" : "off");
         $("label#" + key + ", img#" + key).css("opacity", setOn ? "1" : ".666");
@@ -249,7 +249,7 @@ $(document).ready(() => {
 
     // measure
     function measure2deathsFeedback(enable) {
-      /* $('[data-toggle="toggle"]#toggleDeaths').bootstrapToggle(
+      /* $('[data-bs-toggle="toggle"]#toggleDeaths').bootstrapToggle(
         enable ? "enable" : "disable"
       ); */
       $("label#toggleDeaths, img#toggleDeaths").css({

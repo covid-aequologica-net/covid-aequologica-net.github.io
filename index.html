@@ -83,7 +83,8 @@
           <div id="title" class="btn-group m-1 p-2 d-none d-md-inline">COVID-19</div>
           <div id="cumulaGroup" class="btn-group" title="total numbers vs. daily new">
             <button type="button" class="btn btn-sm btn-outline-secondary" data-color=""><span id="cumulat"></span></button>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
@@ -95,7 +96,8 @@
           <div id="mesureGroup" class="btn-group" title="confirmed vs. deaths">
             <!--  vs. recovered -->
             <button type="button" class="btn btn-sm btn-outline-secondary" data-color=""><span id="measure"></span></button>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
@@ -119,8 +121,8 @@
                     <span class="d-none d-sm-inline">help</span>
                   </button>
                   <!-- permalink -->
-                  <button id="permalink" type="button" role="button" class="btn btn-sm btn-outline-secondary" title="share this graph on social media" data-toggle="modal"
-                    data-target="#permalinkModal">
+                  <button id="permalink" type="button" role="button" class="btn btn-sm btn-outline-secondary" title="share this graph on social media" data-bs-toggle="modal"
+                    data-bs-target="#permalinkModal">
                     <img src="./img/svg/share-svgrepo-com.svg">
                     <span class="d-none d-sm-inline">permalink</span>
                   </button>
@@ -239,78 +241,69 @@
   <!-- footer -->
   <footer class="footer">
     <nav id="bottom" class="navbar fixed-bottom navbar-expand-sm d-flex">
-      <form class="navbar-item form-inline flex-grow-1" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-        <div>
-          <label id="startFeedback" for="startRangeInput"><span></span></label>
-          <br>
-          <input type="range" id="startRangeInput" step="1" min="1" value="1" class="w-100 custom-range" />
+      <div class="container-fluid">
+        <form class="navbar-item form-inline flex-grow-1" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
+          <div>
+            <label id="startFeedback" for="startRangeInput"><span></span></label>
+            <br>
+            <input type="range" id="startRangeInput" step="1" min="1" value="1" class="w-100 custom-range" />
+          </div>
+          &nbsp;
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <img id="cog" type="svg" src="./img/svg/settings-svgrepo-com.svg">
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-flex justify-content-end align-items-center">
+              <div title="per capita vs. absolute numbers">
+                <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
+                  <label id="toggleCapitaLabel" for="toggleCapita" class="form-check-label px-1">per million</label>
+                  <br>
+                  <input type="range" min="0" max="1" value="0" id="toggleCapita">
+                  <datalist id="tickmarks3">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                  </datalist>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-flex justify-content-end align-items-center">
+              <div title="logarithmic vs. linear Y axis">
+                <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
+                  <label id="toggleLinearLabel" for="toggleLinear" class="form-check-label px-1">log Y axis</label>
+                  <br>
+                  <input type="range" min="0" max="1" value="0" id="toggleLinear">
+                  <datalist id="tickmarks2">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                  </datalist>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-flex justify-content-end">
+              <div title="length of rolling average" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
+                <label id="sizeOfAverageLabel" for="sizeOfAverage" class="text-right w-100" style="margin: 0; padding: 0; text-align: right !important">
+                </label>
+                <br>
+                <input type="range" min="0" max="9" value="6" id="sizeOfAverage">
+                <datalist id="tickmarks">
+                  <option value="1"></option>
+                  <option value="2"></option>
+                  <option value="3"></option>
+                  <option value="4"></option>
+                  <option value="5"></option>
+                  <option value="6"></option>
+                  <option value="7"></option>
+                  <option value="14"></option>
+                  <option value="21"></option>
+                  <option value="28"></option>
+                </datalist>
+              </div>
+            </li>
+          </ul>
         </div>
-        &nbsp;
-      </form>
-      <!-- vertical-align: text-bottom; -->
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <img id="cog" type="svg" src="./img/svg/settings-svgrepo-com.svg">
-      </button>
-
-      <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item d-flex justify-content-end align-items-center">
-            <div title="per capita vs. absolute numbers">
-              <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-                <label id="toggleCapitaLabel" for="toggleCapita" class="form-check-label px-1">per million</label>
-                <!-- input id="toggleCapita" data-taggle-on="percapita" data-taggle-off="absolute" type="checkbox" data-toggle="toggle" data-size="xs" data-onstyle="outline-primary"
-                  data-offstyle="outline-secondary">
-                <img id="toggleCapita" class="rounded float-right" type="svg" src="./img/svg/group-people-svgrepo-com.svg" -->
-                <br>
-                <input type="range" min="0" max="1" value="0" id="toggleCapita"><!--  class="custom-range form-control-range" -->
-                <datalist id="tickmarks3">
-                  <option value="1"></option>
-                  <option value="2"></option>
-                </datalist>
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item d-flex justify-content-end align-items-center">
-            <div title="logarithmic vs. linear Y axis">
-              <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-                <label id="toggleLinearLabel" for="toggleLinear" class="form-check-label px-1">log Y axis</label>
-                <!-- input id="toggleLinear" data-taggle-on="logarithmic" data-taggle-off="linear" type="checkbox" data-toggle="toggle" data-size="xs" data-onstyle="outline-primary"
-                  data-offstyle="outline-secondary">
-                <img id="toggleLinear" class="rounded float-right" type="svg" src="./img/svg/log.svg" -->
-                <br>
-                <input type="range" min="0" max="1" value="0" id="toggleLinear"><!--  class="custom-range form-control-range" -->
-                <datalist id="tickmarks2">
-                  <option value="1"></option>
-                  <option value="2"></option>
-                </datalist>
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item d-flex justify-content-end">
-            <div title="length of rolling average" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-              <label id="sizeOfAverageLabel" for="sizeOfAverage" class="text-right w-100" style="margin: 0; padding: 0; text-align: right !important">
-              </label>
-              <br>
-              <input type="range" min="0" max="9" value="6" id="sizeOfAverage">
-              <datalist id="tickmarks">
-                <option value="1"></option>
-                <option value="2"></option>
-                <option value="3"></option>
-                <option value="4"></option>
-                <option value="5"></option>
-                <option value="6"></option>
-                <option value="7"></option>
-                <option value="14"></option>
-                <option value="21"></option>
-                <option value="28"></option>
-              </datalist>
-            </div>
-          </li>
-        </ul>
       </div>
     </nav>
   </footer>
@@ -321,7 +314,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">permalink</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -352,7 +345,7 @@
               reset to factory default
             </button>
           </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -382,7 +375,7 @@
       <td class="center">
         <span id="trucAndAstuceForTableSorter" style="display: none">{{trucAndAstuce}}</span>
         <span class="form-check">
-          <input type="checkbox" data-toggle="toggle" class="form-check-input position-static" id="cb{{index}}" value="{{index}}" name="{{name}}" {{checked}}>
+          <input type="checkbox" data-bs-toggle="toggle" class="form-check-input position-static" id="cb{{index}}" value="{{index}}" name="{{name}}" {{checked}}>
         </span>
       </td>
       <td class="name">
@@ -405,8 +398,8 @@
       <tr>
           <th class="country" style="padding: 0;">
               <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example" style="min-width: 200px; margin: -2px;">
-                  <button type="button" class="add border-top-0 _border-bottom-0 _border-left-0 btn btn-sm btn-primary float-left text-nowrap" title="add country" data-toggle="modal"
-                      data-target="#modalCountryPicker">
+                  <button type="button" class="add border-top-0 _border-bottom-0 _border-left-0 btn btn-sm btn-primary float-left text-nowrap" title="add country" data-bs-toggle="modal"
+                      data-bs-target="#modalCountryPicker">
                       <span style="font-size: 18p; font-weight: bolder;">+</span>
                   </button>
                   <!-- <button type="button" id="qwe" class="qwe btn border-top-0 _border-bottom-0 btn-sm btn-outline-secondary" title="qwe">
