@@ -250,16 +250,16 @@
           </div>
           &nbsp;
         </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+          aria-label="Toggle navigation" style="margin: 0; padding: 0;">
           <img id="cog" type="svg" src="./img/svg/settings-svgrepo-com.svg">
-        </button>
+        </div>
         <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item d-flex justify-content-end align-items-center">
               <div title="per capita vs. absolute numbers">
                 <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-                  <label id="toggleCapitaLabel" for="toggleCapita" class="form-check-label px-1">per million</label>
+                  <label id="toggleCapitaLabel" for="toggleCapita" class="form-check-label w-100">per capita</label>
                   <br>
                   <input type="range" min="0" max="1" value="0" id="toggleCapita">
                   <datalist id="tickmarks3">
@@ -272,7 +272,7 @@
             <li class="nav-item d-flex justify-content-end align-items-center">
               <div title="logarithmic vs. linear Y axis">
                 <div class="form-check form-check-inline text-nowrap align-middle" style="margin: 0 .5rem; padding: 0; height: 2.2rem;">
-                  <label id="toggleLinearLabel" for="toggleLinear" class="form-check-label px-1">log Y axis</label>
+                  <label id="toggleLinearLabel" for="toggleLinear" class="form-check-label w-100">linear Y axis</label>
                   <br>
                   <input type="range" min="0" max="1" value="0" id="toggleLinear">
                   <datalist id="tickmarks2">

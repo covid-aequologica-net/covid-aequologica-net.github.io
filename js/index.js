@@ -359,7 +359,7 @@ $(document).ready(() => {
       }
     }
 
-    // absolute vs. per million inhabitants
+    // absolute vs. per capita
     tickmarks(
       redraw,
       "#toggleCapita",
@@ -371,7 +371,7 @@ $(document).ready(() => {
           return (dec === "percapita" ? 0 : 1);
         },
       },
-      (a) => $("<span>"+(a === "percapita" ?"per million inhabitants ":"absolute")+"</span>")
+      (a) => $("<span>"+(a === "percapita" ?"per capita":"absolute")+"</span>")
     );
     
     // linear vs. logarithmic

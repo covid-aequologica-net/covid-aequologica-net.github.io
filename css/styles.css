@@ -91,13 +91,16 @@ footer #bottom {
   font-size: 12px;
 }
 
-footer #bottom label {
+footer #bottom label,
+footer #bottom label span {
   margin-bottom: 0 !important;
   text-align: center !important;
+  font-size: 10px;
+  font-family: monospace;
 }
 
 footer #bottom label#startFeedback {
-  min-width: 120px;
+  min-width: 8rem;
   /* line-height: 22px; */
   text-align: right !important;
   background-image: url(/img/svg/left-arrow-svgrepo-com.svg);

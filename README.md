@@ -32,7 +32,7 @@ You may find cumbersome all this typing (read: you are not a geek). But wait, yo
 1. select **daily** or total figures, and **confirmed** or deaths data
 2. add or remove countries from list
 3. set start date
-4. select **per million inhabitants** or absolute figures
+4. select **per capita** or absolute figures
 5. select **linear** or logarithmic Y axis
 6. set the number of days over which the daily average is calculated (effective only for daily figures)
 
