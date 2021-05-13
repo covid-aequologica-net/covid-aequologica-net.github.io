@@ -19,7 +19,6 @@ const countriesHolder = Countries();
 
 // dates
 const parseDate = d3.timeParse("%Y-%m-%d");
-
 let startDate =  moment("2020-03-01");
 let endDate;
 
@@ -323,7 +322,7 @@ function setupCategories() {
 // Read in data
 function fetchData(callback) {
     const URL = (domain === "usa")
-        ? 'https://api.covidtracking.com/v1/states/daily.json'
+        ? 'https://data.cdc.gov/resource/9mfq-cb36.json'
         : 'https://pomber.github.io/covid19/timeseries.json';
 
     $.ajax({
